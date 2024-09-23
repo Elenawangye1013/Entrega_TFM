@@ -1,0 +1,65 @@
+
+.login-container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+    background-color: #FEFAE0;
+    padding-top: 30px;
+  }
+  
+  .login-form, .register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px; 
+    margin: 0 20px; 
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 5%;
+  }
+  
+  .form-input {
+    margin-bottom: 16px;
+  }
+  
+  .toggle-group {
+    margin: 16px 0;
+  }
+  
+  .toggle-button {
+    border-radius: 4px;
+    border: 1px solid #EA5141; 
+    margin: 0 4px;
+  }
+  
+  .toggle-button.selected {
+    background-color: #EA5141 !important; 
+    color: #fff !important; 
+  }
+  
+  h4 {
+    color: #EA5141; 
+  }
+  
+  button {
+    margin-top: 16px;
+  }
+
+
+  .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+    height: 15px !important;
+  }
+
+  @media (max-width: 600px) {
+    .css-1oqqzyl-MuiContainer-root{
+      padding-left: 40px !important;
+      padding-right: 40px !important;
+    }
+    .calendar-container{
+      box-shadow: none !important;
+    }
+  }
+  

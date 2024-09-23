@@ -1,0 +1,299 @@
+/* Estilos generales para todos los dispositivos */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.home-intro {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 84px);
+}
+.home-intro-mobile {
+  display: none;
+}
+
+.background-image {
+  background-image: url('./../../assets/sapiens.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 50%;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.home-content {
+  width: 50%;
+  padding: 40px;
+  box-sizing: border-box;
+  background-color: #FEFAE0;
+  z-index: 1;
+}
+
+.main-text {
+  color: #EA5141;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.sub-text {
+  color: #2D2D2D;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.cta-button {
+  background-color: #EA5141;
+  color: #FEFAE0;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.cta-button:hover {
+  background-color: #D94435;
+}
+
+.cromo-section {
+  width: 100%;
+  padding: 40px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.cromo-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.cromo {
+  width: 280px;
+  height: 400px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+}
+
+.cromo:hover {
+  transform: scale(1.05);
+}
+
+.cromo.flipped {
+  transform: rotateY(180deg);
+}
+
+.cromo .cromo-image,
+.cromo .cromo-back {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cromo .cromo-image {
+  object-fit: cover;
+}
+
+.cromo .cromo-back {
+  background-color: #EA5141;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transform: rotateY(180deg);
+  color: #FEFAE0;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.cards-section {
+  width: 100%;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  max-width: 450px;
+  border-radius: 10px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+  transition: transform 0.3s !important;
+  position: relative;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.no-underline {
+  text-decoration: none !important;
+}
+
+.card-content {
+  text-align: left;
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.faq-section {
+  width: 100%;
+  padding: 40px 20px;
+  background-color: #FEFAE0;
+}
+
+.faq-title {
+  font-weight: bold !important;
+  font-size: 2rem !important;
+  margin-bottom: 20px !important;
+}
+
+/* Media Queries para Tablets */
+@media (max-width: 768px) {
+  .home-intro {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .background-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .home-content {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .main-text {
+    font-size: 2.5rem;
+  }
+
+  .sub-text {
+    font-size: 1.2rem;
+  }
+
+  .cromo-container {
+    gap: 30px;
+  }
+
+  .cromo {
+    width: 240px;
+    height: 340px;
+  }
+
+  .cards-container {
+    gap: 30px;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+}
+
+/* Media Queries para Móviles */
+@media (max-width: 480px) {
+
+  .home-intro-mobile {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    width: 100%;
+  }
+  .background-image {
+    width: 100%;
+    height: 250px;
+}
+  .home-intro {
+    display: none;
+  }
+
+  .home-content {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    margin-top: 20px;
+  }
+  .overlay{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+  }
+  .no-underline {
+    display: flex;
+    justify-content: center;
+}
+
+  .main-text {
+    font-size: 2rem;
+  }
+
+  .sub-text {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .cromo-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .cromo {
+    width: 220px;
+    height: 320px;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .card {
+    max-width: 90%;
+  }
+
+  .faq-title {
+    font-size: 1.5rem !important;
+  }
+}

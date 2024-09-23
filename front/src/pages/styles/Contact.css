@@ -1,0 +1,15 @@
+.contact-container {
+    padding: 40px 20px;
+  }
+  
+  .contact-paper {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-button {
+    margin-top: 20px;
+  }
+  

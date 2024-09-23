@@ -1,0 +1,98 @@
+CREATE DATABASE pet;
+
+CREATE TABLE clientes (
+    id_cliente INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    apellido VARCHAR(100) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    contrasena VARCHAR(255) NOT NULL,
+    tipo_plan ENUM('basico', 'premium') NOT NULL
+);
+
+
+CREATE TABLE veterinarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    direccion VARCHAR(255) NOT NULL,
+    ciudad VARCHAR(255) NOT NULL,
+    provincia VARCHAR(255),
+    postalCode VARCHAR(10),
+    lat DECIMAL(9, 6), 
+    lng DECIMAL(9, 6),  
+    telefono VARCHAR(20),
+    email VARCHAR(255) UNIQUE,
+    horario_apertura VARCHAR(50),
+    horario_cierre VARCHAR(50)
+);
+
+CREATE TABLE mascotas (
+    id_mascota INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT,
+    nombre_mascota VARCHAR(100) NOT NULL,
+    raza_mascota VARCHAR(100),
+    tipo_animal ENUM('perro', 'gato', 'otro') NOT NULL,
+    edad INT,
+    sexo ENUM('masculino', 'femenino'),
+    FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente)
+);
+
+CREATE TABLE citas (
+    id_cita INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT,
+    id_centro INT,
+    id_mascota INT,
+    fecha DATETIME NOT NULL,
+    motivo TEXT,
+    FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente),
+    FOREIGN KEY (id_centro) REFERENCES veterinarios(id),
+    FOREIGN KEY (id_mascota) REFERENCES Mascotas(id_mascota)
+);
+
+CREATE TABLE medicamentos (
+    id_medicamento INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT, 
+    id_mascota INT,
+    nombre_medicamento VARCHAR(255) NOT NULL,
+    dosis VARCHAR(100),
+    fecha_inicio DATE,
+    fecha_fin DATE,
+    hora_toma TIME, 
+    intervalo_toma INT, 
+    notas TEXT, 
+    FOREIGN KEY (id_mascota) REFERENCES Mascotas(id_mascota),
+    FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente)  -- Nueva relación
+);
+
+
+
+
+
+INSERT INTO clientes (nombre, apellido, email, contrasena, tipo_plan)
+VALUES ('Juan', 'Pérez', 'juan@gmail.com', '123', 'premium');
+
+
+INSERT INTO veterinarios (nombre, direccion, ciudad, provincia, postalCode, lat, lng, telefono, email, horario_apertura, horario_cierre)
+VALUES
+('Clínica Veterinaria Madrid Centro', 'Calle de Atocha 28', 'Madrid', 'Madrid', '28012', 40.410920, -3.700411, '917234567', 'info@vetmadridcentro.com', '09:00', '18:00'),
+('Clínica Veterinaria Serrano', 'Calle de Serrano 56', 'Madrid', 'Madrid', '28006', 40.430350, -3.686282, '914567234', 'contacto@vetserrano.com', '10:00', '19:00'),
+('Clínica Veterinaria América', 'Avenida de América 15', 'Madrid', 'Madrid', '28002', 40.439365, -3.676543, '915678432', 'info@vetamerica.com', '08:00', '17:00'),
+('Centro Veterinario Goya', 'Calle de Goya 99', 'Madrid', 'Madrid', '28009', 40.425899, -3.676533, '912345890', 'info@centroveterinariogoya.com', '09:00', '18:00'),
+('Hospital Veterinario Las Ventas', 'Calle Alcalá 237', 'Madrid', 'Madrid', '28028', 40.430262, -3.664034, '917654321', 'contacto@hospvetventas.com', '24:00', '24:00'),
+('Veterinarios Gran Vía', 'Calle Gran Vía 20', 'Madrid', 'Madrid', '28013', 40.420004, -3.706620, '918234567', 'info@vetgranvia.com', '09:00', '18:00'),
+('Clínica Veterinaria La Latina', 'Calle Toledo 82', 'Madrid', 'Madrid', '28005', 40.409626, -3.708644, '913578910', 'info@vetlalatina.com', '10:00', '19:00'),
+('Centro Veterinario Moncloa', 'Avenida Reina Victoria 55', 'Madrid', 'Madrid', '28003', 40.442478, -3.714592, '914678123', 'contacto@vetmoncloa.com', '09:00', '18:00'),
+('Clínica Veterinaria Chamartín', 'Calle de Mateo Inurria 8', 'Madrid', 'Madrid', '28036', 40.465374, -3.685967, '919876543', 'info@vetchamartin.com', '08:00', '17:00'),
+('Hospital Veterinario Retiro', 'Avenida Menéndez Pelayo 25', 'Madrid', 'Madrid', '28009', 40.417780, -3.681487, '916789012', 'contacto@hospvetretiro.com', '24:00', '24:00');
+
+INSERT INTO veterinarios (nombre, direccion, ciudad, provincia, postalCode, lat, lng, telefono, email, horario_apertura, horario_cierre)
+VALUES
+('Clínica Veterinaria Plaza Mayor', 'Calle Mayor 45', 'Madrid', 'Madrid', '28013', 40.415445, -3.707415, '917654321', 'info@vetplazamayor.com', '09:00', '18:00'),
+('Veterinarios Paseo del Prado', 'Paseo del Prado 16', 'Madrid', 'Madrid', '28014', 40.413973, -3.693823, '916543210', 'contacto@vetprado.com', '08:00', '17:00'),
+('Centro Veterinario Argüelles', 'Calle de Alberto Aguilera 20', 'Madrid', 'Madrid', '28015', 40.429487, -3.712581, '915678901', 'info@vetarguelles.com', '09:00', '18:00'),
+('Hospital Veterinario Salamanca', 'Calle de Ortega y Gasset 53', 'Madrid', 'Madrid', '28006', 40.432049, -3.677857, '914789012', 'contacto@hospvetsalamanca.com', '24:00', '24:00'),
+('Clínica Veterinaria Las Rozas', 'Avenida de España 43', 'Madrid', 'Madrid', '28024', 40.477097, -3.873711, '918765432', 'info@vetlasrozas.com', '10:00', '19:00'),
+('Centro Veterinario Tetuán', 'Calle de Bravo Murillo 185', 'Madrid', 'Madrid', '28020', 40.455702, -3.696418, '917890123', 'contacto@vettetuan.com', '09:00', '18:00'),
+('Clínica Veterinaria Vallecas', 'Calle de Pedro Laborde 21', 'Madrid', 'Madrid', '28038', 40.392972, -3.658256, '916543789', 'info@vetvallecas.com', '08:00', '17:00'),
+('Veterinarios Barrio de Salamanca', 'Calle de Ayala 60', 'Madrid', 'Madrid', '28001', 40.427888, -3.679957, '917234098', 'contacto@vetbarrio.com', '10:00', '19:00'),
+('Clínica Veterinaria Chamberí', 'Calle de Santa Engracia 92', 'Madrid', 'Madrid', '28010', 40.437159, -3.703012, '915432109', 'info@vetchamberi.com', '09:00', '18:00'),
+('Hospital Veterinario Arturo Soria', 'Calle de Arturo Soria 330', 'Madrid', 'Madrid', '28033', 40.466206, -3.654255, '914567098', 'contacto@hospvetarturosoria.com', '24:00', '24:00');

@@ -1,0 +1,28 @@
+
+.faq-container {
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 40px 20px;
+    box-sizing: border-box;
+  }
+  
+  .faq-title {
+    color: #EA5141; 
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .faq-accordion {
+    margin-bottom: 15px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .faq-question {
+    color: #2D2D2D; 
+  }
+  
+  .faq-answer {
+    color: #2D2D2D; 
+  }
+  

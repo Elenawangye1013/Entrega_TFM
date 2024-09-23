@@ -1,0 +1,136 @@
+@import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100% !important;
+}
+
+header {
+  background-color: #333;
+  color: #FEFAE0;
+  padding: 10px 0;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding-bottom: 50px; 
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+}
+
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav a {
+  color: #FEFAE0;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.page {
+  padding: 20px;
+}
+
+
+.MuiIconButton-root {
+  outline: none;
+  box-shadow: none; 
+}
+
+.MuiIconButton-root:focus {
+  outline: none;
+}
+
+
+/* Responsividad */
+@media (max-width: 600px) {
+  nav ul {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  nav li {
+    margin: 10px 0;
+  }
+}
+
+.nav-link {
+  color: #FEFAE0;
+  text-decoration: none;
+  padding: 8px 16px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  color: #FEFAE0;
+}
+/* .MuiAppBar-root {
+  background-color: #EA5141; 
+} */
+.MuiAppBar-root {
+  height: 84px; 
+}
+
+.MuiToolbar-root {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 84px;
+  margin-left: 16px;
+  
+}
+@font-face {
+  font-family: 'CustomFont';
+  src: 
+       url('./fonts/Alice.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.css-rh6xrq-MuiPaper-root-MuiDrawer-paper{
+  background-color: #FEFAE0 !important;
+}
+.css-gjmo7s-MuiTypography-root{
+  color: #EA5141 !important;
+  font-weight: bold !important;
+}
+#root{
+  height: 100vh !important;
+}

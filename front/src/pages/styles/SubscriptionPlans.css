@@ -1,0 +1,113 @@
+.card-media {
+  width: 40%;
+  object-fit: cover;
+}
+
+.card-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.card-title {
+  color: #EA5141;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  margin-bottom: 10px;
+  color: #2D2D2D;
+}
+
+.card-details {
+  margin-bottom: 20px;
+  padding-left: 20px;
+  color: #2D2D2D;
+}
+
+.card-price {
+  margin-bottom: 20px;
+  color: #2D2D2D;
+}
+
+.card-button {
+  border-radius: 5px;
+}
+
+
+@media (max-width: 900px) {
+  .card-media {
+    width: 50%;
+  }
+
+  .card-content {
+    padding: 15px; 
+  }
+
+  .container {
+    padding: 30px 15px; 
+  }
+
+  .MuiGrid-item {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .MuiCard-root {
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  .MuiCardContent-root {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-media {
+    width: 100%; 
+    height: auto;  
+  }
+  h1 {
+    font-size: 2rem !important;
+  }
+  .css-1gq05ox-MuiPaper-root-MuiCard-root{
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .css-o69gx8-MuiCardMedia-root{
+    width: 100% !important;
+    height: 270px !important;
+  }
+
+  .card-content {
+    padding: 10px; 
+  }
+
+  .MuiGrid-container {
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  .MuiGrid-item {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .MuiCard-root {
+    flex-direction: column; 
+    align-items: center; 
+    margin-bottom: 20px; 
+  }
+
+  .MuiCardContent-root {
+    padding: 15px; 
+  }
+
+  .card-title,
+  .card-description,
+  .card-details,
+  .card-price {
+    text-align: center; 
+  }
+}

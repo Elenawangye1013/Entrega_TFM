@@ -1,0 +1,71 @@
+.calendar-container {
+    max-width: 1105px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1)
+  }
+  
+  .rbc-event {
+    background-color: #EA5141; 
+    color: #fff; 
+    border-radius: 5px; 
+    padding: 5px 10px;
+    font-size: 0.875rem; 
+  }
+  
+
+  .rbc-header {
+    background-color: #EA5141; 
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .rbc-toolbar {
+    background-color: #EA5141; 
+    color: #fff;
+  }
+  
+  .rbc-day-header {
+    background-color: #FEFAE0; 
+    color: #333; 
+  }
+  
+
+  .rbc-time-slot {
+    border-bottom: 1px solid #FEFAE0;
+  }
+  
+  .rbc-time-header-content {
+    background-color: #EA5141; 
+    color: #fff; 
+  }
+  
+  .rbc-toolbar button {
+    background-color: #EA5141; 
+    color: #fff; 
+    border: none; 
+    border-radius: 0px !important; 
+    padding: 8px 16px; 
+    cursor: pointer; 
+  }
+  
+  .rbc-toolbar button:hover {
+    background-color: #FEFAE0; 
+  }
+  .rbc-toolbar button:active, .rbc-toolbar button.rbc-active{
+    background-color: #FEFAE0; 
+    color: #333;
+  }
+  .rbc-day-slot .rbc-event-label{
+    display: none;
+  }
+  tr{
+    background-color: #FEFAE0 !important;
+    color: #333 !important;
+  }
+  .rbc-day-slot .rbc-event, .rbc-day-slot .rbc-background-event{
+    border: none !important;
+  }

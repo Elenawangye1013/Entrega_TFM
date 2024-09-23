@@ -1,0 +1,71 @@
+.about-us-container {
+    padding: 40px 20px;
+    background-color: #FEFAE0; 
+    display: flex !important; 
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.about-us-container > h1{
+    margin-bottom: 20px !important;
+}
+
+.about-us-title {
+    color: #EA5141; 
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-us-subtitle {
+    padding-bottom: 20px;
+    color: #EA5141; 
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-us-description {
+    color: #333; 
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    text-align: justify;
+}
+.about-us-description-bottom{
+    color: #333; 
+    font-size: 1.2rem;
+    margin-bottom: 50px !important;
+    text-align: justify;
+}
+
+.about-us-team-title {
+    color: #EA5141;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.team-member-card {
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
+    overflow: hidden; 
+    transition: transform 0.3s; 
+}
+
+.team-member-card:hover {
+    transform: translateY(-5px); 
+}
+
+.team-member-card img {
+    border-bottom: 1px solid #ddd; 
+}
+
+.team-member-name {
+    color: #EA5141; 
+}
+
+.team-member-role {
+    color: #555; 
+}
+
+.team-member-description {
+    color: #555;
+}
